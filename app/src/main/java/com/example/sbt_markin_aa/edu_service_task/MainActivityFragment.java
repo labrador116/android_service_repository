@@ -45,8 +45,7 @@ public class MainActivityFragment extends Fragment {
         Button buttonBindStartedBound = (Button) view.findViewById(R.id.bind_started_bound);
         Button buttonUnbindStartedBound = (Button) view.findViewById(R.id.unbind_started_bound);
 
-        mIntent =new Intent(getContext(), EduTaskIntentService.class);
-        IntentFilter intentFilter = new IntentFilter();
+        mIntent =new Intent(getContext(), EduTaskService.class);
 
         buttonStartStarted.setOnClickListener(new View.OnClickListener() {
             @Override
