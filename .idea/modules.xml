@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/android_service_repository.iml" filepath="$PROJECT_DIR$/android_service_repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu_service_task.iml" filepath="$PROJECT_DIR$/edu_service_task.iml" />
     </modules>

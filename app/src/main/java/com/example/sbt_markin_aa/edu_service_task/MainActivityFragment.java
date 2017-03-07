@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.media.MediaBrowserServiceCompat;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +39,10 @@ public class MainActivityFragment extends Fragment {
         Button buttonStopStarted = (Button) view.findViewById(R.id.stop_started);
         Button buttonBindBound = (Button) view.findViewById(R.id.bind_bound);
         Button buttonUnbindBound = (Button) view.findViewById(R.id.unbind_bound);
+        Button buttonStartStartedBound = (Button) view.findViewById(R.id.start_started_bound);
+        Button buttonStopStartedBound = (Button) view.findViewById(R.id.stop_started_bound);
+        Button buttonBindStartedBound = (Button) view.findViewById(R.id.bind_started_bound);
+        Button buttonUnbindStartedBound = (Button) view.findViewById(R.id.unbind_started_bound);
 
         mIntent =new Intent(getContext(), EduTaskIntentService.class);
 
@@ -66,6 +68,35 @@ public class MainActivityFragment extends Fragment {
         });
 
         buttonUnbindBound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getContext().unbindService(mServiceConnection);
+            }
+        });
+
+        /*************************************************************************************/
+
+        buttonStartStartedBound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getContext().startService(mIntent);
+            }
+        });
+
+        buttonStopStartedBound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getContext().stopService(mIntent);
+            }
+        });
+
+        buttonBindStartedBound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getContext().bindService(mIntent,mServiceConnection,Context.BIND_AUTO_CREATE);
+            }
+        });
+        buttonUnbindStartedBound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getContext().unbindService(mServiceConnection);

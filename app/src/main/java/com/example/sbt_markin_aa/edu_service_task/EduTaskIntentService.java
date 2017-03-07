@@ -29,6 +29,7 @@ public class EduTaskIntentService extends IntentService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Log.d("[SERVICE_LOG]","EXECUTED");
     }
 
     @Override
