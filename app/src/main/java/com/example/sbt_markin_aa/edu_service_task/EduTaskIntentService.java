@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 
@@ -30,6 +31,9 @@ public class EduTaskIntentService extends IntentService {
             e.printStackTrace();
         }
         Log.d("[SERVICE_LOG]","EXECUTED");
+        Intent logMessage = new Intent();
+        logMessage.putExtra(MainActivity.ServiceLogBroadcastReceiver.EXTRA_LOG_STRING,"EXECUTED");
+        sendBroadcast(logMessage);
     }
 
     @Override

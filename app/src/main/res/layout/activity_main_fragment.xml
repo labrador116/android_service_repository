@@ -3,102 +3,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="Started_bound"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:id="@+id/started_bound_text_view"
-        android:layout_alignParentRight="true" />
+        android:id="@+id/relative_layout_container"
+        >
 
-    <Button
-        android:text="START"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/start_started_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/started_bound_text_view"
+            android:layout_below="@+id/started_bound_text_view"
+            android:text="START" />
+
+        <Button
+            android:id="@+id/bind_started_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/stop_started_bound"
+            android:layout_below="@+id/stop_started_bound"
+            android:text="BIND" />
+
+        <TextView
+            android:id="@+id/started_bound_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="Started_bound" />
+
+        <Button
+            android:id="@+id/stop_started_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/start_started_bound"
+            android:layout_below="@id/start_started_bound"
+            android:text="STOP" />
+
+        <Button
+            android:id="@+id/unbind_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bind_bound"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/stop_started_bound"
+            android:text="UNBIND" />
+
+        <TextView
+            android:id="@+id/bound_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_toLeftOf="@id/started_bound_text_view"
+            android:text="Bound" />
+
+        <TextView
+            android:id="@+id/started_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:layout_toLeftOf="@id/bound_text_view"
+            android:text="Started" />
+
+        <Button
+            android:id="@+id/start_started"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/started_text_view"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/bind_bound"
+            android:text="START" />
+
+        <Button
+            android:id="@+id/stop_started"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_started"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/unbind_bound"
+            android:text="STOP" />
+
+        <Button
+            android:id="@+id/unbind_started_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/bind_started_bound"
+            android:layout_below="@+id/bind_started_bound"
+            android:text="BOUND" />
+
+        <Button
+            android:id="@+id/bind_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bound_text_view"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/start_started_bound"
+            android:text="BIND" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/start_started_bound"
-        android:layout_below="@+id/started_bound_text_view"
-        android:layout_alignEnd="@+id/started_bound_text_view" />
-
-    <Button
-        android:text="STOP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/start_started_bound"
-        android:layout_alignLeft="@id/start_started_bound"
-        android:id="@+id/stop_started_bound" />
-
-    <Button
-        android:text="BIND"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stop_started_bound"
-        android:layout_alignLeft="@+id/stop_started_bound"
-        android:id="@+id/bind_started_bound" />
-
-    <Button
-        android:text="BOUND"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bind_started_bound"
-        android:layout_alignLeft="@+id/bind_started_bound"
-        android:id="@+id/unbind_started_bound" />
-
-
-    <TextView
-        android:text="Bound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bound_text_view"
-        android:layout_toLeftOf="@id/started_bound_text_view"
-        android:layout_marginRight="50dp" />
-
-    <Button
-        android:text="BIND"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bind_bound"
-        android:layout_below="@+id/bound_text_view"
-        android:layout_toLeftOf="@id/start_started_bound"
-        android:layout_marginRight="10dp"
-        />
-
-    <Button
-        android:text="UNBIND"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/unbind_bound"
-        android:layout_below="@+id/bind_bound"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/stop_started_bound"/>
-
-
-
-    <TextView
-        android:text="Started"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/started_text_view"
-        android:layout_marginEnd="40dp"
-        android:layout_toLeftOf="@id/bound_text_view"
-        />
-    <Button
-        android:text="START"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/start_started"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/bind_bound"
-        android:layout_below="@+id/started_text_view" />
-
-    <Button
-        android:text="STOP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/start_started"
-        android:layout_toLeftOf="@id/unbind_bound"
-        android:layout_marginRight="10dp"
-        android:id="@+id/stop_started" />
-
+        android:layout_below="@id/relative_layout_container"
+        android:ems="10"
+        android:inputType="textMultiLine" />
 
 
 </RelativeLayout>

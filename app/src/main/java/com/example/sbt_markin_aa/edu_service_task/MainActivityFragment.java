@@ -3,6 +3,7 @@ package com.example.sbt_markin_aa.edu_service_task;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -45,11 +46,13 @@ public class MainActivityFragment extends Fragment {
         Button buttonUnbindStartedBound = (Button) view.findViewById(R.id.unbind_started_bound);
 
         mIntent =new Intent(getContext(), EduTaskIntentService.class);
+        IntentFilter intentFilter = new IntentFilter();
 
         buttonStartStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getContext().startService(mIntent);
+
             }
         });
 
